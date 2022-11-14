@@ -1,13 +1,17 @@
+ <x-app-layout>
+    <x-slot name="header">
+         </x-slot>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <title>Blog</title>
+     {{ Auth::user()->name }}
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body class="antialiased">
-        <h1>Blog Name</h1>
+        <h1>Blog Name </h1>
         <a href="/posts/create">create</a>
         <div class='posts'>
             @foreach ($posts as $post)
@@ -34,5 +38,15 @@
         }
     }
 </script>
+<div>
+    @foreach($questions as $question)
+    <div>
+        <a href="https://teratail.com/questions/{{$question['id']}}">
+            {{$question['title']}}
+        </a>
+    </div>
+    @endforeach
+</div>
     </body>
 </html>
+</x-app-layout>

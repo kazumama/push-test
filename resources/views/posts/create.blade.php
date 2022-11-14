@@ -1,3 +1,6 @@
+<x-app-layout>
+    <x-slot name="header">
+    </x-slot>
 <!DOCTYPE HTML>
 <html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
     <head>
@@ -28,3 +31,4 @@
         </div>
     </body>
 </html>
+ </x-app-layout>
